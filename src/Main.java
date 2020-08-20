@@ -175,11 +175,18 @@ public class Main {
         list.add("ccc");
         for (int i = list.size() - 1; i >= 0; i--) {
             String s = list.get(i);
-            if(s.equals("bb")){
+            if (s.equals("bb")) {
                 list.remove(s);
             }
         }
-        System.out.println("list集合元素为："+ Arrays.toString(list.toArray()));
+        System.out.println("list集合元素为：" + Arrays.toString(list.toArray()));
+
+        //ThreadLocal应用实例
+        MyRunnable myRunnable = new MyRunnable();
+        Thread thread1 = new Thread(myRunnable);
+        Thread thread2 = new Thread(myRunnable);
+        thread1.start();
+        thread2.start();
 
 
     }
